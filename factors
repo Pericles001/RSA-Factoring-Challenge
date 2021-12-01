@@ -1,19 +1,27 @@
 #!/usr/bin/python3
+import sys
+
+
+def factorize():
+    try:
+        revfile = sys.argv[1]
+        with open(revfile) as f:
+            for revnumber in f:
+                revnumber = int(revnumber)
+                if revnumber % 2 == 0:
+            print("{}={}*{}".format(revnumber, revnumber // 2, 2))
+            continue
+				i = 3
+		while i < revnumber // 2:
+    					if revnumber % i == 0:
+    							print("{}={}*{}".format(revnumber, revnumber // i, i))
+								break
+						i = i + 2
+						if i == (revnumber // 2) + 1:
+    							 print("{}={}*{}".format(revnumber, revnumber, 1))
+    except(IndexError):
+        pass
+
 
 if __name__ == "__main__":
-    one, two = 0, 0
-    ans = 0
-
-    numbers = ()
-
-    for i in range(len(numbers)):
-        for j in range(2, numbers[i]):
-
-            if (numbers[i] % j == 0):
-                one = j
-                two = range(2, (numbers[i] - 1))
-                ans = numbers[i]
-                for k in two:
-                    if one * k == ans:
-                        print("{}={}*{}".format(numbers[i], one, k))
-                break
+    	factorize()
